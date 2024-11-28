@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+    <div class="contenido-otros">
+        <div class="row">
+            <div class="otros">
+                <h2 class="section-heading mb-4">
+                    <span class="section-heading-lower"> {{ page.title }} </span>
+                </h2>
+                <div class="section-content">
+                    <p> {{ page.content|safe }} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}
+                    

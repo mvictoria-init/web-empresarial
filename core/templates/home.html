@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+			<!--Contenido-->
+			<div class="contenido">
+				<section class="page-section clearfix">
+					<div class="container">
+						<div class="intro">
+							<div class="intro-text left-5 text-center bg-faded  rounded">
+								<h2 class="section-heading mb-4">
+									<span class="section-heading-upper">Déjate sorprender</span>
+									<span class="section-heading-lower">Te gustará Sabor Verde</span>
+								</h2>
+								<p class="mb-3">
+									Somos un restaurante único que ofrece una experiencia culinaria vegana deliciosa y satisfactoria. El restaurante es un lugar donde las personas pueden disfrutar de una comida saludable y sabrosa en un ambiente acogedor y familiar.
+								</p>
+								<a class="intro-button" href="{% url "visit" %}">Visítanos</a>
+							</div>
+							<img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static "img/pizza.jpg" %}"
+								alt="">
+						</div>
+					</div>
+				</section>
+			</div>
+
+{% endblock content %}
+	

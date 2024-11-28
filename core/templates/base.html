@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sabor Verde </title>
+
+    <link rel="shortcut icon" href="{% static "img/imagen.ico" %}" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ranga:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/fontello.css" %}">
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
+
+    {% block head %}
+    {% endblock head %}
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!--Menu de Navegacion Dashbort-->
+            <div class="barra-lateral col-12 col-sm-auto">
+                <div class="logo">
+                    <h2>Sabor Verde</h2>
+                </div>
+                <div class="menu d-flex d-sm-block justify-content-center flex-wrap">
+                    <a href="{% url "home" %}">
+                        <i class="icon-home"></i>
+                        <span>Inicio</span>
+                    </a>
+                    <a href="{% url "service" %}">
+                        <i class="icon-coffee"></i>
+                        <span>Menú</span>
+                    </a>
+                    <a href="{% url "visit" %}">
+                        <i class="icon-cab"></i>
+                        <span>Visitanos</span>
+                    </a>
+                    <a href="{% url "contact" %}">
+                        <i class="icon-phone"></i>
+                        <span>Contacto</span>
+                    </a>
+                    <a href="{% url "blog" %}">
+                        <i class="icon-blogger"></i>
+                        <span>Blog</span>
+                    </a>
+                    <a href="{% url "history" %}">
+                        <i class="icon-history"></i>
+                        <span>Historia</span>
+                    </a>
+                </div>
+            </div>
+            <main class="main col">
+                <!--Titulo de la Marca -->
+                <div class="row marca">
+                    <div class="titulos col-12">
+                        <h3>Un festín para los sentidos, un regalo para tu cuerpo</h3>
+                        <h2>Sabor Verde</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        {% block content %}{% endblock content %}
+
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Pié de página -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row footer-icon justify-content-center">
+                <p class="col-auto">
+                    <a href="#" class="icono">
+                        <i class="icon-twitter"></i>
+                    </a>
+                    <a href="#" class="icono">
+                        <i class="icon-facebook"></i>
+                    </a>
+                    <a href="#" class="icono">
+                        <i class="icon-instagram"></i>
+                    </a>
+                </p>
+                <p class="col-auto link">
+
+                    {% load pages_extra %}
+
+                    {% get_pages as pages %}
+
+                    {% for page in pages %}
+                    
+                    <a href="{% url "other" page.id %}" class="link">{{ page.title }}</a> {% if not forloop.last %} - {% endif %}
+
+                    {% endfor %}
+
+                </p>
+                <p class="col-auto copy">Copyright &copy; Maria Victoria Bastardo<a href="https://www.linkedin.com/in/mar%C3%ADa-victoria-bastardo-guerra-bb9879120/" class="icon"><i class="icon-phone"></i></a> 2024 - Contenido generado con IA</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="{% static "js/jquery-3.4.1.min.js" %}"></script>
+    <script src="{% static "js/popper.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/scripts.js" %}"></script>
+</body>
+
+</html>
