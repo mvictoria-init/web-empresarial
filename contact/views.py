@@ -22,7 +22,7 @@ def contact(request):
             # create the content
             mail = EmailMessage(
                 "la Sabrosa: Nuevo mensaje de contacto", #asunto
-                "De {name} {mail} \n\nEscribió:\n\n {content}", #mensaje
+                f"De {name} {mail} \n\nEscribió:\n\n {content}", #mensaje
                 "lasabrosa.com", #email de origen
                 ["mvictoria@mailtrap.io"], #email de destino
                 reply_to=[mail],
